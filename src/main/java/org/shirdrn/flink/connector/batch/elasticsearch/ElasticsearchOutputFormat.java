@@ -5,7 +5,8 @@ import org.apache.flink.annotation.PublicEvolving;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.util.Preconditions;
 import org.apache.http.HttpHost;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.elasticsearch.action.ActionRequest;
 import org.elasticsearch.action.DocWriteRequest;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 public class ElasticsearchOutputFormat<T> extends AbstractElasticsearchOutputFormat<T, RestHighLevelClient> {
 
-  private static final Logger LOG = Logger.getLogger(ElasticsearchOutputFormat.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ElasticsearchOutputFormat.class);
   private static final long serialVersionUID = 1L;
 
   private ElasticsearchOutputFormat(
